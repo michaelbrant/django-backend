@@ -37,6 +37,9 @@ class Org(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     site_url = models.URLField(blank=True, null=True)
 
+    def __str__(self):
+        return str(self.name)
+
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -57,7 +60,6 @@ class Profile(models.Model):
         Org, null=True, on_delete=models.CASCADE, blank=True, related_name="user_org"
     )
     role = models.CharField(max_length=50, choices=ROLES, default="USER")
-    #has_sales_access = models.BooleanField(default=False)
     has_billing_access = models.BooleanField(default=False)
     is_organization_admin = models.BooleanField(default=False)
 
@@ -77,6 +79,7 @@ class OrgAPIKey(AbstractAPIKey):
         null=True,
         blank=True
     )
+    role = models.CharField(max_length=50, choices=ROLES, default="ADMIN")
 
 
 class Auth0Management(models.Model):
