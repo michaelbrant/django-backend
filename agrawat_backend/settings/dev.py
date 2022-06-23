@@ -17,7 +17,7 @@ CORS_ORIGIN_WHITELIST = (
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 
-AWS_STORAGE_BUCKET_NAME = 'botdisco'
+AWS_STORAGE_BUCKET_NAME = ''
 
 # Sentry Logging
 # sentry_sdk.init(

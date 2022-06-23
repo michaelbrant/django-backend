@@ -11,7 +11,7 @@
 (cd /home/app; python manage.py migrate)
 
 if [ -n "$DJANGO_SUPERUSER_USERNAME" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ] ; then
-    (cd /home/app; python manage.py createsuperuser2 --noinput --email support@botdisco.com --username $DJANGO_SUPERUSER_USERNAME --password $DJANGO_SUPERUSER_PASSWORD)
+    (cd /home/app; python manage.py createsuperuser2 --noinput --email support@example.com --username $DJANGO_SUPERUSER_USERNAME --password $DJANGO_SUPERUSER_PASSWORD)
 fi
 
 # Seed the Database here with any Django Fixtures

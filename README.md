@@ -1,4 +1,4 @@
-# BotDisco Backend 🕺
+# Django Backend Template 
 
 # Prerequisites
 
@@ -20,11 +20,11 @@ Once you've set all of those environment variables, you're ready to install.
 
 Get into the virtual environment.
 
-    pipenv shell
+    python3.9 -m pipenv shell
 
 Install all python dependencies.
 
-    pipenv install -r requirements.txt
+    python3.9 -m pipenv install -r requirements.txt
 
 ## Database
 
