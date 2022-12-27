@@ -3,8 +3,9 @@ This is an example of what a view should look like. Keeping it here for referenc
 '''
 
 
-# from snippets.models import Snippet
-# from snippets.serializers import SnippetSerializer
+# from agrawat_backend.app.models import Snippet
+# from agrawat_backend.app.serializers import SnippetSerializer
+# from agrawat_backend.app.errors import get_validation_error_response
 # from django.http import Http404
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
@@ -25,7 +26,7 @@ This is an example of what a view should look like. Keeping it here for referenc
 #         if serializer.is_valid():
 #             serializer.save()
 #             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#          return get_validation_error_response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+#         return get_validation_error_response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
 # class SnippetDetail(APIView):
 #     """
@@ -48,7 +49,7 @@ This is an example of what a view should look like. Keeping it here for referenc
 #         if serializer.is_valid():
 #             serializer.save()
 #             return Response(serializer.data)
-#          return get_validation_error_response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+#         return get_validation_error_response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
 #     def delete(self, request, pk, format=None):
 #         snippet = self.get_object(pk)
