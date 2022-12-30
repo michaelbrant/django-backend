@@ -1,4 +1,4 @@
-# Django Backend Template 
+# Django Backend Template
 
 # Prerequisites
 
@@ -72,16 +72,18 @@ Check out the admin dashboard [http://localhost:8000/admin](http://localhost:800
 
     This adds the dependency to the Pipfile and only installs the library in your virtual environment.
 
-2.  In VSCode, make sure your Python interpreter is selected to use the pipenv virtualenv. TODO add gif
+2.  Highly recommend using [pip-upgrader](https://github.com/simion/pip-upgrader) to update requirements.
 
-3.  You can test Django models in a shell with:
+3.  In VSCode, make sure your Python interpreter is selected to use the pipenv virtualenv. TODO add gif
+
+4.  You can test Django models in a shell with:
     ```
     python .\manage.py shell
     import django
     from thetone_backend.app.models import User
     User.objects.all()
     ```
-4.  Seed the Database using Django fixtures. Check out the `fixtures` folder.
+5.  Seed the Database using Django fixtures. Check out the `fixtures` folder.
     ```
     python manage.py loaddata runtime_groups user_roles fields
     ```

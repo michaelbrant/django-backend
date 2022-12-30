@@ -1,11 +1,12 @@
-'''
-This is an example of what a view should look like. Keeping it here for reference.
-'''
+# '''
+# This is an example of what a view should look like. Keeping it here for reference.
+# '''
 
 
-# from agrawat_backend.app.models import Snippet
-# from agrawat_backend.app.serializers import SnippetSerializer
-# from agrawat_backend.app.errors import get_validation_error_response
+# from agrawatt_backend.app.models import Snippet
+# from agrawatt_backend.app.serializers import SnippetSerializer
+# from agrawatt_backend.app.errors.error_utils import get_validation_error_response, get_general_error_response, get_business_requirement_error_response
+# from agrawatt_backend.app.errors.custom_errors import FivetranApiError
 # from django.http import Http404
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
@@ -17,9 +18,14 @@ This is an example of what a view should look like. Keeping it here for referenc
 #     List all snippets, or create a new snippet.
 #     """
 #     def get(self, request, format=None):
-#         snippets = Snippet.objects.all()
-#         serializer = SnippetSerializer(snippets, many=True)
-#         return Response(serializer.data)
+#         try:
+#             snippets = Snippet.objects.all()
+#             serializer = SnippetSerializer(snippets, many=True)
+#             return Response(serializer.data)
+#         except FivetranApiError as e:
+#             return get_business_requirement_error_response(e, status.HTTP_400_BAD_REQUEST)
+#         except Exception as e:
+#             return get_general_error_response(e)
 
 #     def post(self, request, format=None):
 #         serializer = SnippetSerializer(data=request.data)

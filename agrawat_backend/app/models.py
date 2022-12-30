@@ -36,6 +36,9 @@ class SubscriptionPricingPlan(models.Model):
 class Org(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     site_url = models.URLField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return str(self.name)
@@ -62,6 +65,8 @@ class Profile(models.Model):
     role = models.CharField(max_length=50, choices=ROLES, default="USER")
     has_billing_access = models.BooleanField(default=False)
     is_organization_admin = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         unique_together = (("user", "org"),)
@@ -69,6 +74,9 @@ class Profile(models.Model):
     @property
     def is_admin(self):
         return self.is_organization_admin
+
+    def __str__(self):
+        return str(self.user) + " (" + str(self.role) + " of " + str(self.account) + ")"
 
 
 class OrgAPIKey(AbstractAPIKey):

@@ -5,12 +5,14 @@ from rest_framework_api_key.admin import APIKeyModelAdmin, APIKey
 
 # Register your models here.
 admin.site.register(User)
-admin.site.register(Org)
 admin.site.register(Profile)
 admin.site.register(SubscriptionLimits)
 admin.site.register(SubscriptionPlan)
 admin.site.register(SubscriptionPricingPlan)
 
+@admin.register(Org)
+class OrgAdmin(admin.ModelAdmin):
+    readonly_fields = ('id', 'created_at',)
 
 @admin.register(OrgAPIKey)
 class OrgAPIKeyModelAdmin(APIKeyModelAdmin):
