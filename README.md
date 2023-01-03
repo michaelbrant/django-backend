@@ -204,7 +204,9 @@ eb deploy
 
 ### HTTPS
 
-Setting up HTTPS was done by following this [ Youtube Video](https://www.youtube.com/watch?v=BeOKTpFsuvk&ab_channel=WornOffKeys). NOTE: You have to use a custom domain in order to set up https. Don't try to set up https with the EB domain name AWS generates for you.. you're going to have a bad time. Just buy a cheap domain name.
+Setting up HTTPS was done by following this [ Youtube Video](https://www.youtube.com/watch?v=BeOKTpFsuvk&ab_channel=WornOffKeys). NOTE: You have to use a custom domain in order to set up https. Don't try to set up https with the EB domain name AWS generates for you.. you're going to have a bad time. Just buy a cheap domain name. 
+
+If you're not using Route53, you need to create a certificate using AWS certificate manager. It will have you add a record to the DNS config. Then, add another record with a name of "api" and a value of the Elastic Beanstalk domain name. It should loook something like: prod-env.[id].us-east-1.elasticbeanstalk.com
 
 ### Troubleshooting EB
 
